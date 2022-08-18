@@ -14,13 +14,16 @@ max(a,b);
 
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
+int main()
+{
     int i,j,k;
     long long int a,b,c,d,m,n,t,c1=0,c2=0,c3=0,c4=0,sum1=0,sum2=0,x=0,y,z;
     int arr[10000],arr1[10000],arr2[10000];
     string str,str1,str2;
+    while(n!=1000){
     cin>>t;
-    while(t--){
+    while(t--)
+    {
         cin>>a;
         if(a==1)
             c1++;
@@ -33,25 +36,58 @@ int main(){
     }
     cout<<c1<<" "<<c2<<" "<<c3<<" "<<c4<<endl;
 
-    x=c4;
-    b=c1+c3;
-    if(b>=4){
-            if(b%4!=0){
-                c2+=(b%4);
-            }
-        x+=b/4;
+    x=c4+c3;
+    c1-=c3;
+            cout<<"zero:"<<x<<" ";
 
-    }
-    else{
-        c2+=b;
-    }
-    if(c2>=4&&c2%4==0){
+    if(c1>c2*2&&c2>0){
+       c2*=2;
+        if(c2%4==0){
         x+=(c2/4);
+        cout<<"first:"<<x<<" ";
     }
     else{
+      x+=(c2/4);
         x++;
+                cout<<"second:"<<x<<" ";
+
     }
 
-cout<<x<<endl;
+    }
+      else{
+            c2+=c1;
+               if(c2%4==0){
+        x+=(c2/4);
+                cout<<"third:"<<x<<" ";
+
+    }
+//    else{
+//      x+=(c2/4);
+//        x++;
+//        cout<<"fouth:"<<x<<" ";
+
+    }
+    if(c1%4==0){
+         x+=(c1/4);
+                 cout<<"fifth:"<<x<<" ";
+
+    }
+    else if(c1>0){
+             x+=(c1/4);
+        x++;
+                cout<<"seven:"<<x<<" ";
+
+    }
+
+
+    cout<<endl<<x<<endl;
+      c1=0;
+     c2=0;
+     c3=0;
+     c4=0;
+    }
+
+
+
 }
 
